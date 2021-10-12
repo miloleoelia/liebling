@@ -59,8 +59,7 @@ fieldset {
   z-index: 5;
 }
 
-#ghost-portal-root{
-  z-index: 4;
+#ghost-portal-root .gh-portal-triggerbtn-iframe{
   display: none;
   
   @include respond-to('medium') {
