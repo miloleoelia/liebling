@@ -1,8 +1,7 @@
 {
   "author": {
-    "email": "this.eduardo@gmail.com",
-    "name": "Eduardo Gómez",
-    "url": "https://eduardogomez.io"
+    "email": "milo.maghini@protonmail.com",
+    "name": "Milo Maghini"
   },
   "config": {
     "posts_per_page": 10,
@@ -27,8 +26,7 @@
       }
     }
   },
-  "demo": "https://liebling.eduardogomez.io",
-  "description": "Beautiful and clean theme that is easy and comfortable to use.",
+  "description": "Fork of liebling theme for milosmagicworld.eu blog",
   "engines": {
     "ghost": ">=4.0.0",
     "ghost-api": "v4"
@@ -49,10 +47,6 @@
     "ghost-theme"
   ],
   "license": "MIT",
-  "name": "liebling",
-  "screenshots": {
-    "desktop": "assets/screenshot-desktop.jpg",
-    "mobile": "assets/screenshot-mobile.jpg"
-  },
+  "name": "liebling-milosmagicworld",
   "version": "1.0.5"
 }
