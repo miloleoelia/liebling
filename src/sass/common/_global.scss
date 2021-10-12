@@ -61,4 +61,9 @@ fieldset {
 
 #ghost-portal-root{
   z-index: 4;
+  display: none;
+  
+  @include respond-to('medium') {
+    display: block;
+  }
 }
