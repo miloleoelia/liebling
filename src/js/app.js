@@ -246,9 +246,15 @@ $(() => {
     if ($toggleDarkMode.is(':checked')) {
       $('html').attr('data-theme', 'dark')
       localStorage.setItem('theme', 'dark')
+      if(window.REMARK42){
+        window.REMARK42.changeTheme('dark');
+      }
     } else {
       $('html').attr('data-theme', 'light')
       localStorage.setItem('theme', 'light')
+      if(window.REMARK42){
+        window.REMARK42.changeTheme('light');
+      }
     }
   })
 
@@ -282,12 +288,19 @@ $(() => {
   if (currentSavedTheme) {
     $('html').attr('data-theme', currentSavedTheme)
 
+    if(window.REMARK42){
+      window.REMARK42.changeTheme(currentSavedTheme);
+    }
+
     if (currentSavedTheme === 'dark') {
       $toggleDarkMode.attr('checked', true)
     }
   } else {
     if (isDarkMode()) {
       $toggleDarkMode.attr('checked', true)
+      if(window.REMARK42){
+        window.REMARK42.changeTheme('dark');
+      }
     }
   }
 

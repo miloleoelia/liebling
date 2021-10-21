@@ -7,6 +7,7 @@ Fork of the beautiful [Liebling theme](https://github.com/eddiesigner/liebling) 
  - Changed colours palette
  - Use "Portal" for subscribing instead of the newsletter page
  - Removed "Subscribe" floating button on mobile view  
+ - Add Remark42 comments
 
 ## Preview
 

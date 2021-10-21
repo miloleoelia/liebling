@@ -89,6 +89,10 @@ into the {body} of the default.hbs template --}}
                   </ul>
                 </section>
               {{/if}}
+              <section class="m-tags in-post">
+                <h3 class="m-submenu-title">{{t "Comments"}}</h3>
+                <div id="remark42"></div>
+              </section>
             </div>
           </div>
         </div>
@@ -159,26 +163,6 @@ into the {body} of the default.hbs template --}}
             </div>
           </div>
         </section>
-        {{!-- If you want to embed comments, this is a good place to do it! --}}
-        {{!--
-          <section class="m-comments">
-            <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-              <div id="disqus_thread"></div>
-              <script>
-                var disqus_config = function () {
-                  this.page.url = "{{url absolute="true"}}";
-                  this.page.identifier = "ghost-{{comment_id}}"
-                };
-                (function () {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                })();
-              </script>
-            </div>
-          </section>
-        --}}
       {{/post}}
       {{!-- Related posts --}}
       {{#if post.tags.length}}
@@ -237,4 +221,14 @@ into the {body} of the default.hbs template --}}
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script defer src="{{asset "js/post.js"}}"></script>
+  <script>
+    var remark_config = {
+      host: "https://remark.milosmagicworld.eu",
+      site_id: 'milosmagicworld',
+      theme: localStorage.getItem('theme'), 
+      locale: '{{@site.locale}}',
+      style: 'test.css'
+    };
+  </script>
+  <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
 {{/contentFor}}
